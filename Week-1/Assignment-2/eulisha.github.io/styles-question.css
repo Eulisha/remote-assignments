@@ -1,0 +1,104 @@
+/* 設定flex對象*/
+#main-header #main-nav #main-articles body main section article footer{
+    display: flex;
+}
+/* 設定flex-wrap */
+#main-header #main-nav #main-articles{
+    flex-wrap: wrap;
+}
+/* 設定垂直排列flex */
+body main section article{
+    flex-direction: column;
+}
+/* 設定對齊方式 */
+#main-header footer{
+    justify-content: space-between;
+}
+#main-nav #main-articles{
+    justify-content: space-around;
+}
+main section body{
+    justify-content:center;
+}
+#main-header article{
+    align-items:center;
+}
+
+/* 分別設定 */
+/* 基本樣式 */
+* {
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+    color: rgb(9, 64, 46);
+}
+body{
+    /* background-color:#004c4c; */
+    font-family: 'Varela Round', sans-serif;
+	line-height: 1.2;
+}
+/* Header由此開始 */
+#main-header{
+    background-color: white;
+    padding: 1rem;
+}
+#main-nav li{
+    margin: 0.5em;
+    color:rgb(71, 75, 71);
+    list-style: none;
+}
+#main-articles article{
+    flex-grow: 1;
+    width: 40%;
+}
+#main-logo {
+    margin-left: 2rem;
+	max-width: 10%;
+}
+#site-name{
+    margin-left: 2rem;
+    font-size: 1rem;
+    margin-right: auto;
+}
+
+/* 內文由此開始 */
+#key-vision{
+    flex-grow: 1;
+    height: 200px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+section{
+    flex-grow: 1;
+    background-color: white;
+    padding: 1.5rem;
+}
+article{
+    background-color: #eeeeef;
+    width: 100%;
+    border: 1px solid black;
+    margin: 1rem;
+    padding: 1rem;
+}
+h2{
+    margin: 2rem auto;
+}
+p{
+    font-size: .95em;
+    line-height: 1.3em;
+    letter-spacing: 3px;
+    padding: 1em;
+	margin-bottom: 1.8em;
+}
+
+footer{
+    background-color: white;
+    margin: auto 2rem 2rem;
+}
+
+@media screen and (min-width = 1200px) {
+    #main-articles{
+        width: 1200px;
+    }
+}

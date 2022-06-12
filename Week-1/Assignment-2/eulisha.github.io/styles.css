@@ -1,0 +1,108 @@
+/* 基本樣式 */
+* {
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+    color: rgb(9, 64, 46);
+}
+body{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    /* background-color:#004c4c; */
+    font-family: 'Varela Round', sans-serif;
+	line-height: 1.2;
+}
+
+/* Header由此開始 */
+#main-header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 1rem;
+}
+#main-nav{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+#main-nav li{
+    margin: 0.5em;
+    color:rgb(71, 75, 71);
+    list-style: none;
+}
+#main-articles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+#main-articles article{
+    flex-grow: 1;
+    width: 40%;
+}
+#main-logo {
+    margin-left: 2rem;
+	max-width: 10%;
+}
+#site-name{
+    margin-left: 2rem;
+    font-size: 1rem;
+    margin-right: auto;
+}
+
+/* 內文由此開始 */
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+}
+#key-vision{
+    flex-grow: 1;
+    height: 200px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    flex-grow: 1;
+    background-color: white;
+    padding: 1.5rem;
+}
+article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eeeeef;
+    width: 100%;
+    border: 1px solid black;
+    margin: 1rem;
+    padding: 1rem;
+}
+h2{
+    margin: 2rem auto;
+}
+p{
+    font-size: .95em;
+    line-height: 1.3em;
+    letter-spacing: 3px;
+    padding: 1em;
+	margin-bottom: 1.8em;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    margin: auto 2rem 2rem;
+}
+
+@media screen and (min-width = 1200px) {
+    #main-articles{
+        width: 1200px;
+    }
+}
