@@ -101,7 +101,7 @@ footer{
     margin: auto 2rem 2rem;
 }
 
-@media screen and (min-width = 1200px) {
+@media screen and (min-width : 1200px) {
     #main-articles{
         width: 1200px;
     }
