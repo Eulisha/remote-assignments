@@ -1,27 +1,31 @@
 /* 設定flex對象*/
-#main-header #main-nav #main-articles body main section article footer{
+#main-header, #main-nav, .articles, body, main, section, article, footer{
     display: flex;
 }
 /* 設定flex-wrap */
-#main-header #main-nav #main-articles{
+#main-header, #main-nav, .articles{
     flex-wrap: wrap;
 }
 /* 設定垂直排列flex */
-body main section article{
+body, main, section, article{
     flex-direction: column;
 }
 /* 設定對齊方式 */
-#main-header footer{
+#main-header, footer{
     justify-content: space-between;
 }
-#main-nav #main-articles{
+#main-nav, .articles{
     justify-content: space-around;
 }
-main section body{
-    justify-content:center;
+main, section, body{
+    justify-content: center;
 }
-#main-header article{
-    align-items:center;
+#main-header, main, article{
+    align-items: center;
+}
+.articles{
+    margin-left: 0;
+    margin-right: 0;
 }
 
 /* 分別設定 */
@@ -48,11 +52,7 @@ body{
     color:rgb(71, 75, 71);
     list-style: none;
 }
-#main-articles article{
-    flex-grow: 1;
-    width: 40%;
-}
-#main-logo {
+#main-logo{
     margin-left: 2rem;
 	max-width: 10%;
 }
@@ -64,7 +64,6 @@ body{
 
 /* 內文由此開始 */
 #key-vision{
-    flex-grow: 1;
     height: 200px;
     margin-right: 0px;
     margin-left: 0px;
@@ -75,11 +74,20 @@ section{
     padding: 1.5rem;
 }
 article{
+    flex-grow: 1;
+    width: 40%;
     background-color: #eeeeef;
-    width: 100%;
     border: 1px solid black;
     margin: 1rem;
     padding: 1rem;
+}
+.read-more-btn{
+    border-radius: solid;
+    width: 20%;
+    margin: auto;
+}
+#read-more-articles{
+    display: none;
 }
 h2{
     margin: 2rem auto;
@@ -97,8 +105,8 @@ footer{
     margin: auto 2rem 2rem;
 }
 
-@media screen and (min-width = 1200px) {
-    #main-articles{
+@media screen and (min-width : 1200px) {
+    .articles, {
         width: 1200px;
     }
 }
