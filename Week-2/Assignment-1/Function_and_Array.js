@@ -8,10 +8,9 @@ function max(numbers){
     return maxNum;
 }
 function findPosition(numbers,target){
-    for (const m of numbers){
-        if (m === target){
-            let index = numbers.indexOf(m);
-            return index;
+    for (let i = 0; i < numbers.length; i++){
+        if (numbers[i] === target){
+            return i;
         }
     }
     return -1;
