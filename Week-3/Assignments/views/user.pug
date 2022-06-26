@@ -1,0 +1,6 @@
+//- 取得使用者名稱並回傳給trackName做cookie
+body 
+    form(action = '/trackName', method = 'get')
+        label What's your name?
+            input(type = 'text', name = 'name')
+        button(type = 'submit') 送出
