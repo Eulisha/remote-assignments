@@ -19,8 +19,7 @@ function render(data){
         let phone = document.createTextNode(element);
         ele.appendChild(phone); 
     });
-    document.body.insertBefore(ele);
-    
+    document.body.prepend(ele); 
 }
 
 ajax(
