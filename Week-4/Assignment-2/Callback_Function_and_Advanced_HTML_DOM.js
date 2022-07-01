@@ -1,4 +1,4 @@
-function ajax(src){
+function ajax(src, callback){
     const xhr = new XMLHttpRequest();
     xhr.open('GET', src);
     xhr.onload = () =>{
