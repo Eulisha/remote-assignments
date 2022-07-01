@@ -16,7 +16,8 @@ function render(data){
     console.log(data);
     let ele = document.createElement('div')
     data.forEach(element => {
-        ele.appendChild(element)    
+        let phone = document.createTextNode(element);
+        ele.appendChild(phone);    
     });
     
 }
