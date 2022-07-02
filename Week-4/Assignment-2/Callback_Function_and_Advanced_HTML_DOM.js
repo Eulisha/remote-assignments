@@ -16,8 +16,8 @@ function render(data){
     console.log(data);
     let ele = document.createElement('div')
     data.forEach(element => {
-        let phone = document.createTextNode(element);
-        ele.appendChild(phone); 
+        let phone = document.createTextNode(element.name);
+        ele.appendChild(phone);
     });
     document.body.prepend(ele); 
 }
