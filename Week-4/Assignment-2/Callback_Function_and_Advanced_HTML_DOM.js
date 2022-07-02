@@ -14,12 +14,16 @@ function ajax(src, callback){
 }
 function render(data){
     console.log(data);
-    let ele = document.createElement('div')
+    let ele = document.createElement('div');
     data.forEach(element => {
-        let phone = document.createTextNode(element.name);
-        ele.appendChild(phone);
+        let name = document.createTextNode(element.name);
+        let price = document.createTextNode(element.price);
+        let description = document.createTextNode(element.description);
+        ele.appendChild(name);
+        ele.appendChild(price);
+        ele.appendChild(description);
     });
-    document.body.prepend(ele); 
+    document.body.prepend(ele);
 }
 
 ajax(
