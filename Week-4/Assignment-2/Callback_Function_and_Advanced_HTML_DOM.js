@@ -27,8 +27,8 @@ function render(data){
 }
 
 ajax(
-    './products.json',
-    // 'https://appworks-school.github.io/Remote-Assigiment-Data/products'
+    // './products.json',
+    'https://appworks-school.github.io/Remote-Assigiment-Data/products',
     function (resposnse){
         render(resposnse);
     }
