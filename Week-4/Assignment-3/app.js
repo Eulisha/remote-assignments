@@ -1,9 +1,11 @@
 const express = require('express');
+const bodyPraser = require('body-parser');
 const mysql = require('mysql');
 const app = express();
 app.set('view engine', 'pug');
+app.use(bodyPraser.urlencoded({extended:false}))
 
-//設定mysql連線
+//Set mysql Connection
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -11,12 +13,15 @@ const db = mysql.createConnection({
     database: 'assignment'
 })
 
+//login homepage
 app.get('/', (req,res)=>{
     res.render('home') //呈現home.pug
 })
+
 //Sign in
-app.get('/sign-in',(req,res) => {
-    let sql = `SELECT * from user WHERE email = '${req.query.email}' AND password = '${req.query.password}';`;
+app.post('/sign-in',(req,res) => {
+    console.log(req.body);
+    let sql = `SELECT * from user WHERE email = '${req.body.email}' AND password = '${req.body.password}';`;
     db.query(sql, (err,result)=>{
         if(err) {
             res.send('<script>alert("Oops, something worng. Please try again."); window.location.href = "/";</script>');
@@ -30,9 +35,10 @@ app.get('/sign-in',(req,res) => {
     })
 })
 //Sign up
-app.get('/sign-up',(req,res) => {
-    let sqlSearch = `SELECT email FROM user WHERE email = '${req.query.email}';`;
-    let sqlInsert = `INSERT INTO user (email, password) VALUES ('${req.query.email}', '${req.query.password}');`;
+app.post('/sign-up',(req,res) => {
+    console.log(req.body);
+    let sqlSearch = `SELECT email FROM user WHERE email = '${req.body.email}';`;
+    let sqlInsert = `INSERT INTO user (email, password) VALUES ('${req.body.email}', '${req.body.password}');`;
     db.query(sqlSearch, (err,result)=>{
         if(err) {
             res.send('<script>alert("Oops, something worng. Please try again."); window.location.href = "/";</script>');
@@ -45,16 +51,17 @@ app.get('/sign-up',(req,res) => {
                     res.send('<script>alert("Oops, something worng. Please try again."); window.location.href = "/";</script>');
                     throw err;
                 };
-                console.log(result);
-                res.redirect('/member');        
+                res.redirect('/member');   
             })
         }
         console.log(result);
     })
 })
+//Finish sign-in or sign-up
 app.get('/member',(req,res)=>{
     res.send('Welcome : )')
 })
+
 app.listen('3000', ()=>{
     console.log('server started on 3000.');
 });
